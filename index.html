@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GPT 5 Will Be a System — Thoughts and Predictions</title>
+  <title>Main Page</title>
   <style>
     :root{
       --bg:#121212; 
@@ -57,92 +57,12 @@ a {
 <body>
   <article class="block">
 
-    <h1>GPT 5 Will Be a System: Thoughts and Predictions</h1>
-    <h2>Written August 6, 2025</h2>
+    <h1>front page</h1>
+    <h2>September 17, 2025</h2>
 
-    <p>I have some random thoughts and wacky predictions for GPT 5. I also think there is nothing wrong with making bad guesses.</p>
-
-    <!-- ───────────────────────────────────── -->
-    <h2>GPT 5 Will Be a System</h2>
-
-    <p>Sam Altman said GPT 5 would be a system. Lots of people
-      (<a href="https://www.reddit.com/r/OpenAI/comments/1iursw2/how_is_unified_gpt5_functionally_different_to_a/" target="_blank">Reddit discussion</a>)
-      (<a href="https://venturebeat.com/ai/a-chatgpt-router-that-automatically-selects-the-right-openai-model-for-your-job-appears-imminent/" target="_blank">VentureBeat article</a>)
-      think that GPT 5 will have a model router that will pick a model based on the difficulty of the prompt.</p>
-
-    <p>I can only imagine that this would be done with a classifier, but where would the data come from? My guess is that OpenAI could train their best model to predict prompts matching to models of varying strengths (say high, medium, and low for instance), and verify that data by testing how the models perform on each prompt in verifiable domains. Once their model is able to accurately predict which prompts go to which model, they can classify a bunch of chatlog examples and feed that to a classifier which takes far less resources to run than an LLM. Maybe this even works for creative domains, but I doubt it.</p>
-
-    <p>If you had an LLM do it, it seems like it would be less costly to just have that model solve the problem rather than try to boot it to another model. Maybe if the LLM was tiny but still very effective at its job, this would not necessarily be the case, but I would be very skeptical that this is a viable route (pun). I am not a machine learning engineer.</p>
-
-    <p>But does this model router even necessarily make sense? People generally don't like the model selections of GPT 4o, GPT 4o-mini, OpenAI o4-mini, OpenAI o3, GPT 4.1, GPT 4.1-mini, and GPT-4.5. Couldn't this problem easily be solved by just having GPT 5, GPT 5-mini, and GPT 5-nano for the pro, plus, and free tiers respectively? Alongside specialized tools like Deep Research, this would still preserve a fairly high granularity if they include the ability to reduce or disable long chains of thought.</p>
-
-    <p>The idea that GPT 5 will be a system comes from Sam Altman himself in his (now outdated) post from February (<a href="https://x.com/sama/status/1889755723078443244" target="_blank">see on X</a>). There are other ways to make GPT 5 into a system that don't involve a model router, such as:</p>
-
-    <ol>
-      <li>Baking in a "medium research" feature into the system that can do more complicated queries that otherwise would have gone to a more expensive Deep Research setup. In my experience, even just saying "do deep research" to o3 sometimes results in a more thorough chain of thought (and by that I mean a longer one) than the default result. Deep Research itself is a system that utilizes LLMs, so maybe a lower compute version can be integrated.</li>
-      <li>Partnering with scientific communities to make accessing and looking up scientific material with tool use more reliable. This could be interesting if the model can synthesize cutting edge science in an economically useful manner. I'm not sure if this is allowed under current copyright/journal publication law.</li>
-      <li>GPT 5 could make calls to ChatGPT Agent to complete some tasks. Maybe the 4o image generator is too expensive or the wrong tool for some image related jobs. In the future I imagine an LLM being lightning quick with existing GUI-based image editors.</li>
-    </ol>
-
-    <p>In any case, I expect interacting with at least one version of GPT will involve more mature systems than exist right now for o3, and certainly for 4o. Extensive tool use has made o3's training date cutoff almost irrelevant for knowledge queries, though I find it struggles with integrating new information, such as whether certain C++23 code can be run on the latest version of MSVC.</p>
-
-    <!-- ───────────────────────────────────── -->
-    <h2>GPT 5 Will Render Some Benchmarks Almost Useless</h2>
-
-    <p>The first thing I will watch for on my lunch break on model release day is the benchmarks, despite the fact that many of the large ones have been saturated.</p>
-
-    <ol>
-      <li><strong>MMLU</strong> hasn't been useful as a metric since 2024.</li>
-      <li>On the mathematics AIME test for 2024 and 2025, multiple SOTA models effectively 100%. This should continue with GPT&nbsp;5.</li>
-      <li>On the sciency GPQA (Diamond) benchmark, there are several models in the 85% range, which is supposedly above what average domain experts achieve. This is a multiple-choice test where a B grade is good, but I still worry a little about accidental test contamination if any API data was trained on. GPT&nbsp;5 should advance SOTA here.</li>
-      <li>The puzzle pattern matching ARC AGI 1 benchmark is still not saturated (no released model has reached the MTurker average of 77%), but o3-high gets 60.8% and Grok 4 gets 66.7%. I think GPT 5 should be very close to the average MTurker on ARC AGI 1, though the score on ARC AGI 2 will only increase a little.</li>
-      <li><em>Aider polyglot</em> and <em>SWE-Bench Verified</em> seem to do a decent job of tracking relative coding performance, and they are at 84.9% (o3-pro) and 73.2% (Opus 4 + tools) respectively. GPT 5 will likely be SOTA on both of these.</li>
-      <li><em>Frontier Math</em> is a benchmark that is filled with extremely difficult domain-specific math questions. I have no idea where this one will go. o3 claimed 25% in December, which was the most shocking result in AI to me since GPT 4. I would still be surprised to see a number above 50% for now.</li>
-    </ol>
-
-    <!-- ───────────────────────────────────── -->
-    <h2>GPT 5 Will Incrementally Improve Long Context</h2>
-
-    <p>On February&nbsp;15, 2024, Google claimed a 1&nbsp;million token context window with Gemini&nbsp;1.5&nbsp;Pro. Nothing came close to claiming that distance for several months. Long-context benchmarks show heavy performance penalties for models after relatively meager distances. Facebook even released Llama&nbsp;4 claiming that Llama&nbsp;4&nbsp;Scout had a context window of 10&nbsp;million, but in practice it might as well be 1% of that, so that doesn't count.</p>
-
-    <p>Unless GPT&nbsp;5 can demonstrably make use of the entire million-token context window (or they claim a 2+ million context window that works as well as Gemini/o3 does at 256k), I would consider the improvement in long-context abilities to be incremental.</p>
-
-    <!-- ───────────────────────────────────── -->
-    <h2>GPT 5 Will Make GPT-OSS Look Bad</h2>
-
-    <p>OpenAI's open-weight release of GPT-oss 120B has made the first American open-weight model that is clearly competitive with Alibaba Qwen and DeepSeek's respective largest offerings. It's not entirely clear if it's actually better for programming overall, as the <a href="https://github.com/Aider-AI/aider/pull/4412/files" target="_blank">Aider polyglot benchmark</a> for the 120B is testing around 41.8%, which is lower than for o3-mini. In practice I find that it's still really good for the simple tasks I've tried, and extremely fast and cheap. It is worth noting this funny exchange that Altman retweeted (<a href="https://x.com/VictorTaelin/status/1952794525262283133" target="_blank">first tweet</a>) where the person later said their first very positive impressions "may have been a miss" (<a href="https://x.com/VictorTaelin/status/1953187614007107798" target="_blank">follow-up tweet</a>).</p>
-
-    <p>I don't think OpenAI would have released a model that is truly the exact same level as o4-mini even if GPT 5 is really good, so given the low training resources (~2&nbsp;million H100 hours on the model card), there may have been some level of sandbagging at work here. A lot of people are fine with losing 10 percent relative performance if they get to pay 90 percent less. Alternatively, it is actually at the level of o4-mini, and GPT 5 is really <i>really</i> good.</p>
-
-    <!-- ───────────────────────────────────── -->
-    <h2>GPT 5 Will Feel Like GPT 5 to Tech Workers and Mathematicians</h2>
-
-    <p>The advances of tools like Claude Code and Codex have been very large strides compared to two years ago. Even combined with pre-GPT 5 models, they are far more useful than the GPT 4 that was released in March of 2023. A modest increase in programming abilities for GPT 5 compared to o3 will easily render it worthy of the title of GPT 5 for programming, something that can be increasingly used in production teams instead of mostly being used to speed up small teams and fragile startups. The actual productivity gains from LLMs are hard to measure but vibe-wise appears to be something in the low double digits for experienced users, even on larger teams with other bottlenecks. The widely circulated METR study dives into more about how in some cases, inexperienced users can experience slow downs (<a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/" target="_blank">see METR blog post</a>).</p>
-
-    <p>I'm not a mathematician, but if o1-preview felt like a mediocre graduate student to Terrence Tao (<a href="https://mathstodon.xyz/@tao/113132502735585408" target="_blank">see post</a>), I imagine GPT 5 will be a more competent one by a significant margin. The model which won IMO Gold won't be released for "many months" so the jump won't be to actual existing frontier capabilities, but many problem benchmarks like AIME which almost completely stumped GPT 4 have now been saturated.
-</p>
-
-    <!-- ───────────────────────────────────── -->
-    <h2>GPT 5 Will Not Feel Like GPT 5 In Many Fields</h2>
-
-    <h3>Creative Writing</h3>
-    <p>Sam Altman posted a tweet in March where he showcased an internal writing-tuned model (<a href="https://x.com/sama/status/1899535387435086115" target="_blank">read it here</a>). I will be honest and say that I think it is not good. Its structure is fine, but in my opinion the execution is pretty terrible, although the genre is certainly not to my taste.
-
-One paragraph impressed me out of 14 (try to guess which!). If they could (figuratively) get that number to 4 or 5 out of 14, I would feel like it is GPT 5. The jump from GPT 3 to GPT 4 in creative writing was not as big as it was for programming, but I don't think that good creative writing takes domain specific so-called PhD intelligence, so models will take a while longer to really win readers over the way existing authors do. I think music models are better than creative writing output from LLMs, but I don't listen to a lot of music.
-</p>
-
-    <h3>Legal Services</h3>
-    <p>Right now, AI is not industry grade with law. Lawyers need extremely robust systems to have AI do more than copywriting work for them. For this to work, there needs to be a system in place to maximally reduce hallucinations by constantly fact checking the LLM with existing case law. I don't think this will be a touted feature of GPT 5 because of the comical amount of legal problems they could get into, but I expect an economically useful system like this to be built before the end of the decade.</p>
-
-    <h3>Scammers and Parasytes</h3>
-    <p>I was worried about how LLMs would spam the internet, and while it's about as annoying as I thought it would be, it doesn't seem to be making scams more believable. The worst case I've seen is Reddit accounts making lots of vaguely on topic comments that get upvoted, and then spamming Amazon affiliate link-ridden generated product reviews in random subreddit for more products than it is possible for an individual human to use and write reviews on. I've seen an account with five digit karma that had thousands of AI generated posts. However, I don't see how the ways that GPT 5 gets better will make this a worse problem.</p>
-
-    <h3>Truck Driving, Train Operator, House Cleaning, Burger Flipping</h3>
-    <p>These sectors are not technologies GPT 4 could perform in, and GPT 5 won't be able to do them either.</p>
-
-    <!-- ───────────────────────────────────── -->
-    <h2>GPT 5 Will Defy My Expectations</h2>
-    <p>I am a database intern in college. Why would I know anything?</p>
+    <a href="./blog1.html">Link 1: example post<br></a>
+    
+    <a href="./test_header.html">Link 2: example header</a>
 
   </article>
 </body>
