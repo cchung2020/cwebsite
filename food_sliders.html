@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Main Page</title>
+  <style>
+    :root{
+      --bg:#121212; 
+      --fg:#f0f0f0;   
+      --link:#80d0ff; 
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+    }
+
+    body{
+      background:var(--bg);
+      color:var(--fg);
+      font:16px/1.6 Arial,Helvetica,sans-serif;
+      display:flex;                 
+      justify-content:center;
+      align-items:flex-start;       
+      padding:40px 2vw;
+      box-sizing:border-box;
+    }
+
+    .block{
+      max-width:720px;         
+      width:100%;
+    }
+
+    h1,h2,h3,h4,h5,h6{margin:1.4em 0 .6em;font-weight:700}
+    h1{font-size:2.2rem;text-align:center}
+    h2{font-size:1.6rem}
+    h3{font-size:1.3rem}
+    em{font-style:italic}
+
+    p {
+  margin: 1em 0;
+  font-size: 1rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+    ul,ol{margin:0 0 1.2em 1.4em}
+    li{margin:.35em 0}
+  </style>
+</head>
+<body>
+<div class="block">
+
+<h1>Ingredients</h1>
+
+  <button onclick="addIngredient()">Add Ingredient</button>
+
+  <div id="ingredients">
+    <div>
+      Ingredient 1: <input type="text" name="ingredient1">
+      Cost: <input type="number" name="cost1" step="0.01">
+    </div>
+  </div>
+  <br>
+  Portions: <input type="number" id="portions" oninput="updateCostPerPortion()">
+  <br>
+  Cost per portion: <span id="costPerPortion">0</span>
+  
+  <script>
+    let ingredientCount = 1;
+
+    function addIngredient() {
+      ingredientCount++;
+      const container = document.getElementById("ingredients");
+      const div = document.createElement("div");
+      div.innerHTML = 
+        `Ingredient ${ingredientCount}: <input type="text" name="ingredient${ingredientCount}">
+         Cost: <input type="number" name="cost${ingredientCount}"">`;
+      container.appendChild(div);
+    }
+
+    function updateCostPerPortion() {
+      let totalCost = 0;
+      for (let i = 1; i <= ingredientCount; i++) {
+        const costInput = document.querySelector(`[name="cost${i}"]`);
+        if (costInput && costInput.value) {
+          totalCost += parseFloat(costInput.value);
+        }
+      }
+      const portions = parseFloat(document.getElementById("portions").value);
+      const costPerPortion = portions > 0 ? (totalCost / portions).toFixed(2) : 0;
+      document.getElementById("costPerPortion").textContent = costPerPortion;
+    }
+
+    document.addEventListener("input", function(e) {
+      if (e.target.name && e.target.name.startsWith("cost")) {
+        updateCostPerPortion();
+      }
+    });
+
+  </script>
+
+</div>
+</body>
+
+</html>
+
