@@ -1,59 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Main Page</title>
-  <style>
-    :root{
-      --bg:#121212; 
-      --fg:#f0f0f0;   
-      --link:#80d0ff; 
-    }
-
-    html,body{
-      height:100%;
-      margin:0;
-    }
-
-    body{
-      background:var(--bg);
-      color:var(--fg);
-      font:16px/1.6 Arial,Helvetica,sans-serif;
-      display:flex;                 
-      justify-content:center;
-      align-items:flex-start;       
-      padding:40px 2vw;
-      box-sizing:border-box;
-    }
-
-    .block{
-      max-width:720px;         
-      width:100%;
-    }
-
-    h1,h2,h3,h4,h5,h6{margin:1.4em 0 .6em;font-weight:700}
-    h1{font-size:2.2rem;text-align:center}
-    h2{font-size:1.6rem}
-    h3{font-size:1.3rem}
-    em{font-style:italic}
-
-    p {
-  margin: 1em 0;
-  font-size: 1rem;
-}
-
-a {
-  color: var(--link);
-  text-decoration: none;
-  font-size: 1rem;
-}
-
-    ul,ol{margin:0 0 1.2em 1.4em}
-    li{margin:.35em 0}
-  </style>
 </head>
 <body>
+
+<header class="site-header">
+  <div class="header-content">
+    <h1 class="site-title">my site</h1>
+    <nav class="site-nav">
+      <a href="./index.html">Home Page</a>
+    </nav>
+  </div>
+</header>
+
 <div class="block">
 
 <h1>Food Portion Price Calculator</h1>
