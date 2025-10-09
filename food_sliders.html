@@ -25,8 +25,9 @@
 
   <div id="ingredients">
     <div>
-      Ingredient 1: <input type="text" name="ingredient1">
-      Cost: <input type="number" name="cost1" step="0.01">
+      Ingredient 1: <input type="text" name="ingredient1" placeholder="e.x. carrots">
+      Cost: <input type="number" name="cost1" step="0.01" placeholder="e.x. 1.25">
+      <button onclick="deleteIngredient(this)">Delete</button>
     </div>
   </div>
   <br>
@@ -43,7 +44,8 @@
       const div = document.createElement("div");
       div.innerHTML = 
         `Ingredient ${ingredientCount}: <input type="text" name="ingredient${ingredientCount}">
-         Cost: <input type="number" name="cost${ingredientCount}"">`;
+         Cost: <input type="number" name="cost${ingredientCount}"">
+         <button onclick="deleteIngredient(this)">Delete</button>`;
       container.appendChild(div);
     }
 
@@ -58,6 +60,12 @@
       const portions = parseFloat(document.getElementById("portions").value);
       const costPerPortion = portions > 0 ? (totalCost / portions).toFixed(2) : 0;
       document.getElementById("costPerPortion").textContent = costPerPortion;
+    }
+
+    function deleteIngredient(button) {
+      const row = button.parentElement;
+      row.remove();
+      updateCostPerPortion();
     }
 
     document.addEventListener("input", function(e) {
